@@ -1,0 +1,29 @@
+module tb_three_to_eight_decoder;
+
+  reg [2:0] input;
+  wire [7:0] output;
+
+  three_to_eight_decoder uut (
+    .input(input),
+    .output(output)
+  );
+
+  initial begin
+    // Test 1: Input 3'b010
+    input = 3'b010;
+    #10 $display("Time=%0t Input=%b Output=%b", $time, input, output);
+
+    // Test 2: Input 3'b101
+    input = 3'b101;
+    #10 $display("Time=%0t Input=%b Output=%b", $time, input, output);
+
+    // Test 3: Input 3'b111
+    input = 3'b111;
+    #10 $display("Time=%0t Input=%b Output=%b", $time, input, output);
+
+    // Add more test cases as needed
+
+    $finish;
+  end
+
+endmodule
